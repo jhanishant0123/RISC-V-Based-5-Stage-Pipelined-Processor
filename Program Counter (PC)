@@ -22,8 +22,8 @@ Verilog code for program counter :-
 module PC(
     input  logic        clk,       // Clock signal
     input  logic        rst,       // Active-high synchronous reset
-    input  logic [31:0] in_pc,     // Next PC value (from PC + 4 or branch)
-    output logic [31:0] pc_out     // Current PC value
+    input  logic [31:0] next_pc_in,     // Next PC value (from PC + 4 or branch)
+    output logic [31:0] pc_value    // Current PC value
 );
 
     // Register to hold the PC value
@@ -34,10 +34,10 @@ module PC(
         if (rst)
             pc_reg <= 32'd0;        // Reset PC to 0
         else
-            pc_reg <= in_pc;        // Load next PC
+            pc_reg <= next_pc_in;        // Load next PC
     end
 
     // Continuous assignment to output
-    assign pc_out = pc_reg;
+    assign pc_value = pc_reg;
 
 endmodule
