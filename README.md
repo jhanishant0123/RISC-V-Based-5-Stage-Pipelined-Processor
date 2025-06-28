@@ -2,10 +2,10 @@
  Project Title -
 RISC-V Based 5-Stage Pipelined Processor in Verilog
 
-📌 Objective
+📌 Objective -
 TO Design and implement a 5-stage pipelined RISC-V processor with hazard detection and forwarding to enable efficient execution of instructions with minimal stalls.
 
-📌 Pipeline Stages
+📌 Pipeline Stages -
 The classic 5 stages:
 
 Stage	Name -	Description
@@ -15,7 +15,7 @@ Stage	Name -	Description
 4	MEM (Memory Access)	Access data memory for load/store.
 5	WB (Write Back)	Write results back to the register file.
 
-📌 Pipeline Registers
+📌 Pipeline Registers -
 We use pipeline registers to separate stages:
 
 A) IF/ID
@@ -23,16 +23,16 @@ B) ID/EX
 C) EX/MEM
 D) MEM/WB
 
-📌 Hazard Detection
+📌 Hazard Detection -
 Identifies load-use hazards.
 
 Inserts stalls as needed.
 
-📌 Forwarding
+📌 Forwarding -
 Forwards data from EX/MEM or MEM/WB to EX stage.
 
 Eliminates unnecessary stalls.
 
-📌 Block Diagram 
-![Image Alt](![Editor _ Mermaid Chart-2025-06-28-140354](https://github.com/user-attachments/assets/adae2db6-0cda-492b-8a4e-f800553b2a15)
+📌 Block Diagram -
+(![Editor _ Mermaid Chart-2025-06-28-140354](https://github.com/user-attachments/assets/adae2db6-0cda-492b-8a4e-f800553b2a15)
 
