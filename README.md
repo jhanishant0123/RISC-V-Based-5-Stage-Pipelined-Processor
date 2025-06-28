@@ -2,8 +2,7 @@
  Project Title -
 RISC-V Based 5-Stage Pipelined Processor in Verilog
 
-📌 Objective -
-TO Design and implement a 5-stage pipelined RISC-V processor with hazard detection and forwarding to enable efficient execution of instructions with minimal stalls.
+I Designed and Implemented a 5-stage pipelined RISC-V processor with hazard detection and forwarding to enable efficient execution of instructions with minimal stalls.
 
 📌 Pipeline Stages -
 The classic 5 stages:
