@@ -1,5 +1,5 @@
 # RISC-V-Based-5-Stage-Pipelined-Processor
-📌 Project Title
+ Project Title -
 RISC-V Based 5-Stage Pipelined Processor in Verilog
 
 📌 Objective
@@ -34,3 +34,5 @@ Forwards data from EX/MEM or MEM/WB to EX stage.
 Eliminates unnecessary stalls.
 
 📌 Block Diagram 
+![Image Alt](![Editor _ Mermaid Chart-2025-06-28-140354](https://github.com/user-attachments/assets/adae2db6-0cda-492b-8a4e-f800553b2a15)
+
