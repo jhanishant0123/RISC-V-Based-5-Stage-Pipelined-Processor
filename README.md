@@ -35,3 +35,21 @@ Eliminates unnecessary stalls.
 📌 Block Diagram -
 ![Editor _ Mermaid Chart-2025-06-28-140354](https://github.com/user-attachments/assets/adae2db6-0cda-492b-8a4e-f800553b2a15)
 
+
+📌 Tools that i Used while creating this project :-
+1) Verilog HDL
+
+2) Vivado (design + simulation)
+
+3) GTKWave (waveform viewing)
+
+📌 Skills Highlighted
+A) CPU microarchitecture
+
+B) Pipeline design
+
+C) Control logic
+
+D) Hazard detection
+
+E) Data forwarding
