@@ -1,13 +1,14 @@
 Instruction Memory:
 
-Block Diagram:-  
+BLOCK DIAGRAM :-  
          +----------------------+
          |  Instruction Memory  |
          |----------------------|
 addr --->|                      |---> instruction
          +----------------------+
 
-System Verilog code for Instruction Memory:-
+SYSTEM VERILOG CODE FOR INSTRUCTION MEMORY :-
+
 // ========================================================================
 // Module: Instruction Memory
 // Description: Read-only memory storing program instructions.
