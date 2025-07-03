@@ -1,15 +1,7 @@
-*IF/ID Pipeline Register:
-This pipeline register holds the output of the Instruction Fetch (IF) stage and feeds it into the Instruction Decode (ID) stage on the next clock cycle. It stores the fetched instruction and the PC value associated with that instruction.
+IF/ID Pipeline Register:
 
-# The Purpose of IF/ID Pipeline register is :
 
-A) Synchronizes IF → ID stage
-
-B) Buffers data between stages
-
-C) Helps maintain pipeline flow
-
-Block Diagram :- 
+BLOCK DIAGRAM :- 
           
           +---------------------+
           |   IF/ID Register    |
@@ -22,7 +14,7 @@ instr_in->|                     |---> instr_out
  Inputs: clk, rst, pc_in, instr_in
  Outputs: pc_out, instr_out
 
-# Verilog code for IF/ID Pipeline register:-
+SYSTEM VERILOG CODE FOR IF/ID PIPELINE REGISTER-
 
 // ========================================================================
 // Module: IF/ID Pipeline Register
