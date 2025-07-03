@@ -1,5 +1,4 @@
 Instruction Memory:
-A read-only memory that stores the program’s instructions. The processor fetches instructions from this memory using the Program Counter (PC) address. Typically initialized at the start of simulation using a memory file.
 
 Block Diagram:-  
          +----------------------+
