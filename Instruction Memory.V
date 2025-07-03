@@ -7,12 +7,12 @@ Block Diagram:-
 addr --->|                      |---> instruction
          +----------------------+
 
-Verilog code for Instruction Memory:-
+System Verilog code for Instruction Memory:-
 // ========================================================================
 // Module: Instruction Memory
 // Description: Read-only memory storing program instructions.
 //              Loads contents from external hex/text file at start.
-// Author: [Nishant Kumar Jha]
+// Author: [NISHANT KUMAR JHA]
 // Date: [29-06-2025]
 // ========================================================================
 
