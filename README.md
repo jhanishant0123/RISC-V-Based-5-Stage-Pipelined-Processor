@@ -5,7 +5,8 @@ I Designed and Implemented a 5-stage pipelined RISC-V processor with hazard dete
 📌 Pipeline Stages -
 The classic 5 stages:
 
-Stage	Name -	Description
+Stage	Name -	
+Description
 1	IF (Instruction Fetch)	Fetch instruction from memory using PC.
 2	ID (Instruction Decode)	Decode instruction, read registers, generate control.
 3	EX (Execute)	Perform ALU operations, branch target calc, forwarding.
@@ -35,7 +36,7 @@ Eliminates unnecessary stalls.
 
 
 📌 Tools that i Used while creating this project :-
-1) Verilog HDL
+1) Icarus verilog
 
 2) Vivado (design + simulation)
 
