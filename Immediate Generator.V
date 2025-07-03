@@ -4,8 +4,8 @@ SYSTEM VERILOG CODE FOR IMMEDIATE GENERATOR :-
 // Module: Immediate Generator (ImmGen)
 // Description: Extracts and sign-extends immediate values from instructions
 //              Supports I, S, B, U, and J types.
-// Author: [Your Name]
-// Date: [Date]
+// Author: [NISHANT KUMAR JHA]
+// Date: [03-07-2025]
 // ========================================================================
 
 module ImmGen (
