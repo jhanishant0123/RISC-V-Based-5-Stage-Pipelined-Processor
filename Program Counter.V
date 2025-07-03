@@ -1,5 +1,6 @@
 Program Counter (PC):
-It holds the address of the next instruction to fetch from instruction memory. On each clock cycle, it is updated to either the next sequential address (PC + 4) or a branch/jump target address if control logic decides.
+
+BLOCK DIAGRAM :-
 
          +-------------+
          |   PC Reg    |
@@ -11,7 +12,7 @@ in_pc -->|             |
 Inputs: clk, rst, in_pc
 Output: pc_out
 
-# Verilog code for program counter :-
+# SYSTEM VERILOG CODE FOR PROGRAM COUNTER:-
 
 // ========================================================================
 // Module: Program Counter (PC)
