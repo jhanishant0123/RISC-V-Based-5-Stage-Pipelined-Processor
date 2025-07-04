@@ -120,9 +120,11 @@ Computer Organization by David A. Patterson & John L. Hennessy
 
 If you're working on similar projects or want to collaborate on VLSI designs, feel free to connect:
 
-GitHub: @jhanishant0123
+GitHub: https://github.com/jhanishant0123
 
-LinkedIn: linkedin.com/in/nishant-vlsi
+
+LinkedIn: https://www.linkedin.com/in/nishant-jha777/
+
 
 Email: jhanishant0123@gmail.com
 
