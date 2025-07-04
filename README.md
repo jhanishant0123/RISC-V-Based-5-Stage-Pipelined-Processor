@@ -1,4 +1,4 @@
-Hi! I'm Nishant Kumar Jha and this is the 5-stage pipelined RISC-V processor that I designed and implemented entirely from scratch using Verilog. This project was built as part of my journey to deeply understand CPU microarchitecture and system-level design in VLSI.
+Hi! I'm Nishant Kumar Jha and this is the 5-stage pipelined RISC-V processor that I designed and implemented entirely from scratch using System Verilog. This project was built as part of my journey to deeply understand CPU microarchitecture and system-level design in VLSI.
 
 🧠 What I Built
 
@@ -6,35 +6,35 @@ I created a modular 5-stage pipelined processor based on the RV32I instruction s
 
 The 5 pipeline stages are:
 
-Instruction Fetch (IF)
+1. Instruction Fetch (IF)
 
-Instruction Decode (ID)
+2. Instruction Decode (ID)
 
-Execute (EX)
+3. Execute (EX)
 
-Memory Access (MEM)
+4. Memory Access (MEM)
 
-Write Back (WB)
+5. Write Back (WB)
 
-Along with that, I implemented:
+# Along with that, I implemented:
 
-Program Counter (PC) and PC Mux
+. Program Counter (PC) and PC Mux
 
-Instruction Memory (IMEM)
+. Instruction Memory (IMEM)
 
-Register File (RF)
+. Register File (RF)
 
-Immediate Generator (ImmGen)
+. Immediate Generator (ImmGen)
 
-ALU and ALU Control
+. ALU and ALU Control
 
-Data Memory (DMEM)
+. Data Memory (DMEM)
 
-Control Unit
+. Control Unit
 
-Forwarding Unit and Hazard Detection Unit
+. Forwarding Unit and Hazard Detection Unit
 
-All four pipeline registers (IF/ID, ID/EX, EX/MEM, MEM/WB)
+. All four pipeline registers (IF/ID, ID/EX, EX/MEM, MEM/WB)
 
 📈 What I Improved (with data)
 
@@ -48,7 +48,7 @@ I added debug instrumentation (like $display statements) across pipeline stages 
 
 .
 ├── src/
-│ ├── top.v # 🧠 Main integration of all pipeline blocks
+│ ├── top.v #  Main integration of all pipeline blocks
 │ ├── pc.v
 │ ├── instruction_memory.v
 │ ├── register_file.v
@@ -81,41 +81,26 @@ I wrote 13 individual SystemVerilog testbenches—one for each major block—to 
 
 I used:
 
-Vivado 2023.2 for synthesis/simulation
+- Xilinx Vivado for synthesis/simulation
 
-GTKWave for signal waveform analysis
+- GTKWave for signal waveform analysis
 
-32-bit RISC-V assembly test programs
+- 32-bit RISC-V assembly test programs
 
 ✅ Key Features
 
-Supports RV32I instructions like ADDI, ADD, SUB, AND, OR, LW, SW, BEQ
+. Supports RV32I instructions like ADDI, ADD, SUB, AND, OR, LW, SW, BEQ
 
-Forwarding Unit to handle data hazards
+. Forwarding Unit to handle data hazards
 
-Hazard Detection Unit for control hazards
+. Hazard Detection Unit for control hazards
 
-Parameterized memory depth and register width
+. Parameterized memory depth and register width
 
-Structured folder layout for maintainability
+. Structured folder layout for maintainability
 
-Custom pipeline register instrumentation with debug prints
+. Custom pipeline register instrumentation with debug prints
 
-🛠️ Tools & Skills Used
-
-Verilog HDL
-
-SystemVerilog Testbenches
-
-RTL Simulation (Vivado, ModelSim compatible)
-
-GTKWave
-
-Computer Architecture
-
-Pipeline design principles
-
-CPU control logic & hazard mitigation
 
 📌 Motivation
 
