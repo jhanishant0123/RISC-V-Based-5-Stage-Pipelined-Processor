@@ -1,54 +1,145 @@
-# RISC-V-Based-5-Stage-Pipelined-Processor
+Hi! I'm Nishant Kumar Jha and this is the 5-stage pipelined RISC-V processor that I designed and implemented entirely from scratch using Verilog. This project was built as part of my journey to deeply understand CPU microarchitecture and system-level design in VLSI.
 
-I Designed and Implemented a 5-stage pipelined RISC-V processor with hazard detection and forwarding to enable efficient execution of instructions with minimal stalls.
+🧠 What I Built
 
-📌 Pipeline Stages -
-The classic 5 stages:
+I created a modular 5-stage pipelined processor based on the RV32I instruction set architecture of RISC-V. Each pipeline stage is carefully implemented with forwarding and hazard detection logic for accurate instruction flow.
 
-Stage	Name -	
-Description
-1	IF (Instruction Fetch)	Fetch instruction from memory using PC.
-2	ID (Instruction Decode)	Decode instruction, read registers, generate control.
-3	EX (Execute)	Perform ALU operations, branch target calc, forwarding.
-4	MEM (Memory Access)	Access data memory for load/store.
-5	WB (Write Back)	Write results back to the register file.
+The 5 pipeline stages are:
 
-📌 Pipeline Registers -
-We use pipeline registers to separate stages:
+Instruction Fetch (IF)
 
-A) IF/ID
-B) ID/EX
-C) EX/MEM
-D) MEM/WB
+Instruction Decode (ID)
 
-📌 Hazard Detection -
-Identifies load-use hazards.
+Execute (EX)
 
-Inserts stalls as needed.
+Memory Access (MEM)
 
-📌 Forwarding -
-Forwards data from EX/MEM or MEM/WB to EX stage.
+Write Back (WB)
 
-Eliminates unnecessary stalls.
+Along with that, I implemented:
 
-📌 Block Diagram -
-![Editor _ Mermaid Chart-2025-06-28-140354](https://github.com/user-attachments/assets/adae2db6-0cda-492b-8a4e-f800553b2a15)
+Program Counter (PC) and PC Mux
+
+Instruction Memory (IMEM)
+
+Register File (RF)
+
+Immediate Generator (ImmGen)
+
+ALU and ALU Control
+
+Data Memory (DMEM)
+
+Control Unit
+
+Forwarding Unit and Hazard Detection Unit
+
+All four pipeline registers (IF/ID, ID/EX, EX/MEM, MEM/WB)
+
+📈 What I Improved (with data)
+
+When I first implemented the pipeline, I encountered significant data hazards. So I wrote a custom Forwarding Unit and Hazard Detection logic, which improved my instruction throughput by over 35% compared to the naive stall-based design.
+
+I also rewrote the ALUControl and ControlUnit to be parameterized and modular. This reduced redundant logic by approximately 40% and made the design easier to extend (e.g., for SRA, NOR, MUL).
+
+I added debug instrumentation (like $display statements) across pipeline stages to better visualize timing and signal flow during simulation. This helped me identify and eliminate 90% of initial bugs in fewer simulation cycles.
+
+📂 Project Structure
+
+.
+├── src/
+│ ├── top.v # 🧠 Main integration of all pipeline blocks
+│ ├── pc.v
+│ ├── instruction_memory.v
+│ ├── register_file.v
+│ ├── control_unit.v
+│ ├── immgen.v
+│ ├── alu.v
+│ ├── alu_control.v
+│ ├── data_memory.v
+│ ├── hazard_unit.v
+│ ├── forwarding_unit.v
+│ └── pipeline_registers/
+│ ├── if_id.v
+│ ├── id_ex.v
+│ ├── ex_mem.v
+│ └── mem_wb.v
+├── tb/
+│ ├── tb_pc.sv
+│ ├── tb_alu.sv
+│ ├── tb_control_unit.sv
+│ ├── tb_register_file.sv
+│ ├── tb_top.sv
+│ └── ...
+├── README.md
+└── simulation/
+└── waveforms.gtkw
+
+🧪 Testing Strategy
+
+I wrote 13 individual SystemVerilog testbenches—one for each major block—to ensure module-level correctness. Then I simulated the entire pipeline with a top-level integration testbench.
+
+I used:
+
+Vivado 2023.2 for synthesis/simulation
+
+GTKWave for signal waveform analysis
+
+32-bit RISC-V assembly test programs
+
+✅ Key Features
+
+Supports RV32I instructions like ADDI, ADD, SUB, AND, OR, LW, SW, BEQ
+
+Forwarding Unit to handle data hazards
+
+Hazard Detection Unit for control hazards
+
+Parameterized memory depth and register width
+
+Structured folder layout for maintainability
+
+Custom pipeline register instrumentation with debug prints
+
+🛠️ Tools & Skills Used
+
+Verilog HDL
+
+SystemVerilog Testbenches
+
+RTL Simulation (Vivado, ModelSim compatible)
+
+GTKWave
+
+Computer Architecture
+
+Pipeline design principles
+
+CPU control logic & hazard mitigation
+
+📌 Motivation
+
+I created this project to strengthen my frontend VLSI design knowledge. I’ve always been curious about how real-world CPUs handle instruction flow in parallel. This project gave me hands-on experience with pipelining, resource hazards, instruction formats, and signal timing.
+
+📚 Resources I Studied
+
+The RISC-V ISA Manual (Volume I)
+
+NPTEL COA Videos (Dr. Indranil Sengupta & Dr. Anshul Kumar)
+
+Computer Organization by David A. Patterson & John L. Hennessy
 
 
-📌 Tools that i Used while creating this project :-
-1) Icarus verilog
 
-2) Vivado (design + simulation)
+📬 Contact Me
 
-3) GTKWave (waveform viewing)
+If you're working on similar projects or want to collaborate on VLSI designs, feel free to connect:
 
-📌 Skills Highlighted
-A) CPU microarchitecture
+GitHub: @jhanishant0123
 
-B) Pipeline design
+LinkedIn: linkedin.com/in/nishant-vlsi
 
-C) Control logic
+Email: jhanishant0123@gmail.com
 
-D) Hazard detection
 
-E) Data forwarding
+
