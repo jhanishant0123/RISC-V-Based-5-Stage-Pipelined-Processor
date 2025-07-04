@@ -36,7 +36,7 @@ module tb_top;
     // Let simulation run through a few clock cycles
     #100;
 
-    $display("\n✅ Final Register File Snapshot:");
+    $display("\n Final Register File Snapshot:");
     $display("x1 = %0d", dut.inst_RF.reg_array[1]);
     $display("x2 = %0d", dut.inst_RF.reg_array[2]);
     $display("x5 = %0d", dut.inst_RF.reg_array[5]);
