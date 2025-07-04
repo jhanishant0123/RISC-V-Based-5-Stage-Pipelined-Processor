@@ -5,7 +5,7 @@ module tb_top;
   logic clk;
   logic rst;
 
-  // Instantiate the top-level module
+  // Instantiate the top-level pipeline CPU
   top dut (
     .clk(clk),
     .rst(rst)
@@ -14,32 +14,32 @@ module tb_top;
   // Clock generation
   always #5 clk = ~clk;
 
-  // Instruction memory preload (optional)
+  // Instruction memory preload (simulate loaded program)
   initial begin
-    // Example: preload 3 instructions in IMEM
-    // Assuming top module exposes InstructionMemory as dut.imem
-    dut.imem.memory[0] = 32'h00500093;  // ADDI x1, x0, 5
-    dut.imem.memory[1] = 32'h00108133;  // ADD x2, x1, x1
-    dut.imem.memory[2] = 32'h003100B3;  // ADD x1, x2, x3 (forwarding test)
+    // Load simple program into instruction memory
+    // ADDI x1, x0, 5    --> x1 = 5
+    // ADD  x2, x1, x1   --> x2 = x1 + x1 = 10
+    // ADD  x3, x2, x1   --> x3 = x2 + x1 = 15
+    dut.inst_IM.memory[0] = 32'h00500093;  // ADDI x1, x0, 5
+    dut.inst_IM.memory[1] = 32'h00108133;  // ADD  x2, x1, x1
+    dut.inst_IM.memory[2] = 32'h001102B3;  // ADD  x5, x2, x1 (x5 = 15)
   end
 
   initial begin
-    $display("Starting top-level simulation...");
-
+    $display("🔁 Starting pipeline simulation...");
     clk = 0;
     rst = 1;
 
-    // Reset for 1 cycle
+    // Hold reset for first 10ns
     #10 rst = 0;
 
-    // Let pipeline run for a few cycles
+    // Let simulation run through a few clock cycles
     #100;
 
-    $display("Final Register File State (selected):");
-    $display("x1 = %0d", dut.rf.reg_array[1]);
-    $display("x2 = %0d", dut.rf.reg_array[2]);
-    $display("x3 = %0d", dut.rf.reg_array[3]);
-    $display("x4 = %0d", dut.rf.reg_array[4]);
+    $display("\n✅ Final Register File Snapshot:");
+    $display("x1 = %0d", dut.inst_RF.reg_array[1]);
+    $display("x2 = %0d", dut.inst_RF.reg_array[2]);
+    $display("x5 = %0d", dut.inst_RF.reg_array[5]);
 
     $finish;
   end
