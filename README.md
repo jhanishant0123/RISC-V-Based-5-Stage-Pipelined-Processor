@@ -44,36 +44,7 @@ I also rewrote the ALUControl and ControlUnit to be parameterized and modular. T
 
 I added debug instrumentation (like $display statements) across pipeline stages to better visualize timing and signal flow during simulation. This helped me identify and eliminate 90% of initial bugs in fewer simulation cycles.
 
-📂 Project Structure
 
-.
-├── src/
-│ ├── top.v #  Main integration of all pipeline blocks
-│ ├── pc.v
-│ ├── instruction_memory.v
-│ ├── register_file.v
-│ ├── control_unit.v
-│ ├── immgen.v
-│ ├── alu.v
-│ ├── alu_control.v
-│ ├── data_memory.v
-│ ├── hazard_unit.v
-│ ├── forwarding_unit.v
-│ └── pipeline_registers/
-│ ├── if_id.v
-│ ├── id_ex.v
-│ ├── ex_mem.v
-│ └── mem_wb.v
-├── tb/
-│ ├── tb_pc.sv
-│ ├── tb_alu.sv
-│ ├── tb_control_unit.sv
-│ ├── tb_register_file.sv
-│ ├── tb_top.sv
-│ └── ...
-├── README.md
-└── simulation/
-└── waveforms.gtkw
 
 🧪 Testing Strategy
 
