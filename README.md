@@ -44,11 +44,43 @@ I also rewrote the ALUControl and ControlUnit to be parameterized and modular. T
 
 I added debug instrumentation (like $display statements) across pipeline stages to better visualize timing and signal flow during simulation. This helped me identify and eliminate 90% of initial bugs in fewer simulation cycles.
 
+##  ISA Supported
+
+- **RV32I** (Base Integer Instruction Set, 32-bit)
+- Instructions tested: `add`, `sub`, `and`, `or`, `sll`, `slt`, `lw`, `sw`, `beq`, `addi`, `ori`, etc.
+- ALU Operations supported via ALU Control module
+
+---
+
+## 🧪 Smart Minimal Testbench Strategy
+
+Rather than testing every small component separately, we verified the processor using **5 essential testbenches**:
+
+| Testbench File     | Purpose                                |
+|--------------------|----------------------------------------|
+| `tb_alu.sv`        | Arithmetic and logical operation tests |
+| `tb_control_unit.sv` | Control signal generation            |
+| `tb_data_memory.sv` | Load/store instruction behavior       |
+| `tb_forwarding_hazard.sv` | Pipeline hazard + forwarding  |
+| `tb_top.sv`        | Full instruction execution (Integration) |
+
+> ✔- Waveforms generated using ModelSim / Vivado for each test.
+
+---
+
+## 📊 Performance Summary
+
+| Metric                   | Value                        |
+|--------------------------|------------------------------|
+| Clock Period             | 10 ns (100 MHz)              |
+| Instructions Per Cycle   | ~1 (ideal CPI in pipelined)  |
+| Forwarding Unit          | Yes                          |
+| Hazard Detection Unit    | Yes                          |
+| Branch Handling          | Basic `beq` only (no prediction) |
+
+---
 
 
-🧪 Testing Strategy
-
-I wrote 13 individual SystemVerilog testbenches—one for each major block—to ensure module-level correctness. Then I simulated the entire pipeline with a top-level integration testbench.
 
 I used:
 
@@ -58,7 +90,7 @@ I used:
 
 - 32-bit RISC-V assembly test programs
 
-✅ Key Features
+# Key Features
 
 . Supports RV32I instructions like ADDI, ADD, SUB, AND, OR, LW, SW, BEQ
 
