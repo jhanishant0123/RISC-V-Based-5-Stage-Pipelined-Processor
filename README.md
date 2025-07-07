@@ -36,7 +36,7 @@ The 5 pipeline stages are:
 
 . All four pipeline registers (IF/ID, ID/EX, EX/MEM, MEM/WB)
 
-📈 What I Improved (with data)
+📈 What I Improved :-
 
 When I first implemented the pipeline, I encountered significant data hazards. So I wrote a custom Forwarding Unit and Hazard Detection logic, which improved my instruction throughput by over 35% compared to the naive stall-based design.
 
