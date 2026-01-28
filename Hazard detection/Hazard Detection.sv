@@ -1,4 +1,3 @@
-
 SYSTEM VERILOG CODE FOR HAZARD DETECTION :-
 // ========================================================================
 // Module: Hazard Detection Unit
