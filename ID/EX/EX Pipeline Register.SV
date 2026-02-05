@@ -1,4 +1,5 @@
- ID/EX Pipeline Register
+
+ID/EX Pipeline Register
 
 BLOCK DIAGRAM :- 
 
